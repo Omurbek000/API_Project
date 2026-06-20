@@ -44,3 +44,25 @@ class CommentSerializer(serializers.ModelSerializer):
         validated_data["author"] = self.context["request"].user
         validated_data["post_id"] = self.context["post_id"]
         return super().create(validated_data)
+
+
+
+
+#  Что мы сделали в SERIALIZERS?
+# ✔ Разделили сериализаторы по модулям
+# Теперь код чистый и легко поддерживаемый.
+
+# ✔ Добавили excerpt
+# Чтобы не тянуть весь текст в списке постов.
+
+# ✔ Добавили slug
+# Для SEO и красивых URL.
+
+# ✔ Добавили is_favorited через аннотацию
+# Больше нет лишних SQL‑запросов.
+
+# ✔ Ограничили глубину комментариев
+# Чтобы не было бесконечной рекурсии.
+
+# ✔ Добавили favorites_count и comments_count через аннотации
+# Быстро, эффективно, без N+1.
